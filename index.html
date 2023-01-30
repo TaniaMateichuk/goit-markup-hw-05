@@ -44,7 +44,7 @@
         <section class="hero">
             <div class="hero-wrapper container">
                 <h1 class="hero-title">Effective Solutions <br> for Your Business</h1>
-                <button type="button" class="hero-btn button">Order Service</button>
+                <button type="button" class="hero-btn button" data-modal-open>Order Service</button>
             </div>
         </section>
 
@@ -269,7 +269,7 @@
         <ul class="customers-list list">
             <li class="customers-list-item">
                 <a href="" class="customers-link link">
-                    <svg class="customers-icon" width="" height="">
+                    <svg class="customers-icon">
                         <use href="./images/icons.svg#icon-client1"></use>
                     </svg>
                 </a>
@@ -358,14 +358,15 @@
         </div>
     </footer>
 
-    <div class="backdrop">
+    <div class="backdrop is-hidden" data-modal>
         <div class="modal">
-            <button type="button" class="modal-btn">
-                <svg>
-                    <use></use>
+            <button type="button" class="modal-btn" data-modal-close>
+                <svg class="modal-btn-close" height="8px" width="8px">
+                    <use href="./images/icons.svg#icon-close-black"></use>
                 </svg>
             </button>
         </div>
     </div>
+    <script src="./js/modal.js"></script>
 </body>
 </html>

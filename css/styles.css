@@ -7,6 +7,7 @@
     --primary-brand-color: #4D5AE5;
     --light-background-color: #F4F4FD;
     --valid-field: #31D0AA;
+    --cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1,
@@ -54,7 +55,7 @@ body {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
-    /* outline: 1px solid tomato; */
+    
     
 }
 
@@ -117,6 +118,7 @@ body {
     font-size: 16px;
     line-height: 1.5;
     color: inherit;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
@@ -165,6 +167,7 @@ body {
     font-size: 16px;
     line-height: 1.5;
     margin-left: auto;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-link:hover,
@@ -203,7 +206,7 @@ body {
 
 .hero-btn {
     color: var(--primary-light-color);
-    background: var(--primary-brand-color);
+    background-color: var(--primary-brand-color);
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
@@ -211,12 +214,14 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     padding: 16px 32px;
-    
+
+    transition: background-color 250ms var(--cubic) 250ms;
 }
 
 .hero-btn:hover,
 .hero-btn:focus {
-    background: var(--presed-state-btn);
+    background-color: var(--presed-state-btn);
+    
 }
 /* ======================================HERO============================= */
 /*======================================FEATURE=========================== */
@@ -376,6 +381,7 @@ body {
 
 .social-link-team {
     background-color: var(--primary-brand-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-icon {
@@ -429,6 +435,8 @@ body {
     padding: 15px 31px;
     border: 1px solid #8E8F99;
     border-radius: 4px;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-icon {
@@ -492,12 +500,21 @@ body {
 
 .social-link-footer {
     background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link-footer:hover,
 .social-link-footer:focus {
     background-color: var(--valid-field);
 }
+
+
+.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
 
 .backdrop {
     position: fixed;
@@ -506,22 +523,45 @@ body {
     z-index: 100;
     width: 100%;
     height: 100%;
-    background-color: rgba(46, 47, 66, 0.4);;
+    background-color: rgba(46, 47, 66, 0.4);
+    /* opacity: 1; */
+    
+    transition: opacity 250ms var(--cubic), visibility 250ms var(--cubic);
+}
+
+
+.backdrop.is-hidden .modal {
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .modal {
     position: absolute;
-    width: 408px;
-    height: 576px;
-    background-color: var(--primary-light-color);
-    left: 50%;
+    left: 50%; 
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(1);
+    min-width: 408px;
+    min-height: 576px;
+    background-color: var(--primary-light-color);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    transition: translate 250ms var(--cubic), scale 250ms var(--cubic);
+
 }
+
+
+
 
 .modal-btn {
     position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
 }
+
 
 
 /* ======================================FOOTER============================= */
@@ -544,7 +584,7 @@ body {
 
 .portfolio-btn {
     color: var(--primary-brand-color);
-    background: var(--light-background-color);
+    background-color: var(--light-background-color);
     font-family: inherit;
     font-weight: 500;
     font-size: 16px;
@@ -553,14 +593,14 @@ body {
     padding: 12px 24px;
     border: 1px solid var(--accent-color);
     border-radius: 4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus {
-    background: var(--presed-state-btn);
+    background-color: var(--presed-state-btn);
     color: var(--primary-light-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
     border: 1px solid var(--presed-state-btn);
-    border-radius: 4px;
 }
 
 
@@ -617,6 +657,7 @@ body {
     padding-left: 32px;
     padding-right: 32px;
     padding-top: 40px;
+
     transform: translateY(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -632,3 +673,4 @@ body {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
     transform: translateY(0);
 }
+
