@@ -118,7 +118,7 @@ body {
     font-size: 16px;
     line-height: 1.5;
     color: inherit;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms var(--cubic);
 }
 
 .nav-link:hover,
@@ -167,7 +167,7 @@ body {
     font-size: 16px;
     line-height: 1.5;
     margin-left: auto;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms var(--cubic);
 }
 
 .address-link:hover,
@@ -436,7 +436,7 @@ body {
     border: 1px solid #8E8F99;
     border-radius: 4px;
 
-    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border 250ms var(--cubic);
 }
 
 .customers-icon {
@@ -500,7 +500,7 @@ body {
 
 .social-link-footer {
     background-color: rgba(255, 255, 255, 0.1);
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms var(--cubic);
 }
 
 .social-link-footer:hover,
@@ -515,6 +515,8 @@ body {
     pointer-events: none;
 }
 
+/* ======================================FOOTER============================= */
+/* ======================================MODAL============================= */
 
 .backdrop {
     position: fixed;
@@ -593,7 +595,7 @@ body {
     padding: 12px 24px;
     border: 1px solid var(--accent-color);
     border-radius: 4px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms var(--cubic), color 250ms var(--cubic), border 250ms var(--cubic);
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus {
