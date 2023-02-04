@@ -80,14 +80,17 @@ body {
 /* ======================================HEADER============================= */
 
 
-.header-page {}
+.header-page {
+    min-width: 1440px;
+    border-bottom: 1px solid var(--accent-color);
+}
 
 .header-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
+
 
 .nav-wrapper {
     display: flex;
@@ -566,7 +569,8 @@ body {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    border-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--accent-color);
 }
     
 
